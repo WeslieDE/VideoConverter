@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<title>Video Verkleinern</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="shell" id="shell" data-busy="false">
+
+  <header class="app-header">
+    <span class="signal-dot" id="signal-dot"></span>
+    <div class="app-heading">
+      <h1>Video Verkleinern</h1>
+    </div>
+  </header>
+
+  <section class="panel">
+    <span class="field-label">Quelle</span>
+    <div class="source-path" id="source-path" data-empty="true" title="">Keine Datei oder Ordner ausgewählt.</div>
+    <div class="source-meta">
+      <span id="source-count">0 Dateien gefunden</span>
+      <button type="button" class="ghost-link" id="pick-path-btn">Datei oder Ordner wählen…</button>
+    </div>
+  </section>
+
+  <section class="panel settings-panel">
+    <div class="setting-row">
+      <label class="field-label" for="resolution-select">Auflösung</label>
+      <select class="control-select" id="resolution-select">
+        <option value="original">Original</option>
+        <option value="720p">720p</option>
+        <option value="1080p" selected>1080p</option>
+        <option value="4k">4K</option>
+      </select>
+    </div>
+
+    <div class="setting-row">
+      <label class="field-label" for="bitrate-select">Max. Bitrate</label>
+      <select class="control-select" id="bitrate-select">
+        <option value="3">3 Mbit/s</option>
+        <option value="6" selected>6 Mbit/s</option>
+        <option value="8">8 Mbit/s</option>
+        <option value="12">12 Mbit/s</option>
+        <option value="18">18 Mbit/s</option>
+      </select>
+    </div>
+
+    <div class="setting-row">
+      <label class="field-label" for="container-select">Zieldateityp</label>
+      <select class="control-select" id="container-select">
+        <option value="mp4" selected>MP4</option>
+        <option value="mkv">MKV</option>
+      </select>
+    </div>
+
+    <div class="setting-row">
+      <span class="field-label">Untertitel</span>
+      <label class="toggle">
+        <input type="checkbox" id="hardsub-checkbox" />
+        <span class="toggle-track"></span>
+        <span class="toggle-caption">Hardcoded einbrennen (Deutsch, sonst Englisch)</span>
+      </label>
+    </div>
+
+    <div class="setting-row font-row" id="font-row">
+      <label class="field-label" for="font-input">Schriftart</label>
+      <input class="control-input" id="font-input" list="font-list" value="DynaPuff" autocomplete="off" />
+      <datalist id="font-list"></datalist>
+    </div>
+  </section>
+
+  <section class="panel progress-panel">
+    <div class="progress-block">
+      <div class="progress-heading">
+        <span class="label">Gesamt</span>
+        <span class="value" id="overall-value">–</span>
+      </div>
+      <div class="progress-track" id="overall-track">
+        <div class="progress-fill" id="overall-fill"></div>
+      </div>
+    </div>
+
+    <div class="progress-block">
+      <div class="progress-heading">
+        <span class="current-file" id="current-file">Bereit.</span>
+        <span class="value" id="file-value">–</span>
+      </div>
+      <div class="progress-track" id="file-track">
+        <div class="progress-fill" id="file-fill"></div>
+      </div>
+      <div class="status-line" id="status-line"></div>
+    </div>
+  </section>
+
+  <div class="cta-area">
+    <div class="banner" id="banner"></div>
+    <button type="button" class="cta-button" id="cta-button" data-state="idle">
+      <span class="cta-spinner"></span>
+      <span id="cta-label">Konvertierung starten</span>
+    </button>
+  </div>
+
+</div>
+<script src="renderer.js"></script>
+</body>
+</html>

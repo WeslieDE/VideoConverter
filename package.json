@@ -1,0 +1,54 @@
+{
+  "name": "video-verkleinern-gui",
+  "version": "1.0.0",
+  "description": "Video-Konverter mit GUI (Auflösung, Bitrate, Hardsub, Container) auf Basis von ffmpeg/NVENC.",
+  "main": "main/main.js",
+  "author": "Weslie",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --linux AppImage"
+  },
+  "dependencies": {
+    "@fontsource/space-grotesk": "^5.2.6",
+    "@fontsource/inter": "^5.2.6",
+    "@fontsource/jetbrains-mono": "^5.2.6"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "tk.weslie.videoverkleinern",
+    "productName": "Video Verkleinern",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main/**/*",
+      "renderer/**/*",
+      "node_modules/@fontsource/**/*",
+      "package.json"
+    ],
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "AudioVideo",
+      "icon": "build/icon.png",
+      "desktop": {
+        "entry": {
+          "Name": "Video Verkleinern",
+          "Comment": "Videos verkleinern/konvertieren mit ffmpeg",
+          "Categories": "AudioVideo;Video;",
+          "MimeType": "video/mp4;video/x-matroska;video/x-msvideo;video/quicktime;video/webm;video/x-ms-wmv;video/x-flv;video/mpeg;inode/directory;"
+        }
+      }
+    }
+  },
+  "allowScripts": {
+    "electron@33.4.11": true
+  }
+}

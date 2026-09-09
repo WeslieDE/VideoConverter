@@ -1,0 +1,18 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="104" fill="#211d17"/>
+  <g transform="rotate(-7 256 256)">
+    <rect x="118" y="128" width="276" height="62" rx="12" fill="#e6944f"/>
+    <clipPath id="stripeClip">
+      <rect x="118" y="128" width="276" height="62" rx="12"/>
+    </clipPath>
+    <g clip-path="url(#stripeClip)">
+      <rect x="148" y="112" width="20" height="94" fill="#211d17" transform="skewX(-22)"/>
+      <rect x="204" y="112" width="20" height="94" fill="#211d17" transform="skewX(-22)"/>
+      <rect x="260" y="112" width="20" height="94" fill="#211d17" transform="skewX(-22)"/>
+      <rect x="316" y="112" width="20" height="94" fill="#211d17" transform="skewX(-22)"/>
+      <rect x="372" y="112" width="20" height="94" fill="#211d17" transform="skewX(-22)"/>
+    </g>
+    <rect x="118" y="196" width="276" height="188" rx="18" fill="#e6944f"/>
+    <path d="M228 246 L228 336 L312 291 Z" fill="#211d17"/>
+  </g>
+</svg>
